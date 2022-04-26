@@ -128,3 +128,24 @@ numbers.unshift(-4);
 numbers[0] = -40; // # pegando posição que já existe ele sobrepõe
 
 console.log(numbers);
+
+console.log("------------- * Aula 05 de arrays----------------");
+
+/*
+  _ Pop remove o último elemento
+  _ shift remove do começo
+  _ ambos não precisam passar um valor, pois removem o que já existe
+*/
+
+numbers.pop();
+numbers.pop();
+numbers.pop();
+numbers.pop();
+
+numbers.shift();
+numbers.shift();
+numbers.shift();
+numbers.shift();
+numbers.shift();
+
+console.log(numbers);
