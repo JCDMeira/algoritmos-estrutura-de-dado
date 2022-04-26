@@ -167,3 +167,19 @@ console.log(numbers);
 numbers.splice(3, 0, 3, 4, 5);
 
 console.log(numbers);
+
+console.log("------------- * Aula 07 de arrays----------------");
+
+/*
+  _
+*/
+
+const avgTempoWeek = [];
+
+const avgTempoWeek1 = [33, 25.2, 19, 27, 23.4, 41.6, 25];
+const avgTempoWeek2 = [41, 29, 33.2, 21.2, 19.5, 17, 33.8];
+
+avgTempoWeek[0] = avgTempoWeek1;
+avgTempoWeek[1] = avgTempoWeek2;
+
+console.log(avgTempoWeek[1][2]);
