@@ -146,6 +146,24 @@ numbers.shift();
 numbers.shift();
 numbers.shift();
 numbers.shift();
-numbers.shift();
+
+console.log(numbers);
+
+console.log("------------- * Aula 06 de arrays----------------");
+
+/*
+  _ o splice remove uma fatia do array, a partir de uma posição indicada
+  # splice(posição de início, número de posições)
+  ! o número indicado como posição já conta como a primeira remoção
+  _ splice também pode indicar adições.
+  # splice(posição de início, número de posições, elementos para adicionar separados por vígula)
+  _ pode inserir quantas quiser
+*/
+
+numbers.splice(3, 3);
+
+console.log(numbers);
+
+numbers.splice(3, 0, 3, 4, 5);
 
 console.log(numbers);
