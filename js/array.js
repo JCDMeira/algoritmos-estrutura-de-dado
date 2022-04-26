@@ -171,15 +171,28 @@ console.log(numbers);
 console.log("------------- * Aula 07 de arrays----------------");
 
 /*
-  _
+  _ Nada mais são que arrays dentro de arrays. Isso permite o array ter duas dimensões.
 */
 
-const avgTempoWeek = [];
+const avgTempWeek = [];
 
-const avgTempoWeek1 = [33, 25.2, 19, 27, 23.4, 41.6, 25];
-const avgTempoWeek2 = [41, 29, 33.2, 21.2, 19.5, 17, 33.8];
+const avgTempWeek1 = [33, 25.2, 19, 27, 23.4, 41.6, 25];
+const avgTempWeek2 = [41, 29, 33.2, 21.2, 19.5, 17, 33.8];
 
-avgTempoWeek[0] = avgTempoWeek1;
-avgTempoWeek[1] = avgTempoWeek2;
+avgTempWeek[0] = avgTempWeek1;
+avgTempWeek[1] = avgTempWeek2;
 
-console.log(avgTempoWeek[1][2]);
+console.log(avgTempWeek[1][2]);
+
+console.log("------------- * Aula 08 de arrays----------------");
+
+/*
+  _ Percorrer ou iterar sobre um array de duas dimensões precisa ter dois laços
+  _ para iterar as duas camadas/dimensões do array
+*/
+
+for (let i = 0; i < avgTempWeek.length; i++) {
+  for (let j = 0; j < avgTempWeek[i].length; j++) {
+    console.log(`posição ${i},${j} :`, avgTempWeek[i][j]);
+  }
+}
