@@ -187,12 +187,39 @@ console.log(avgTempWeek[1][2]);
 console.log("------------- * Aula 08 de arrays----------------");
 
 /*
-  _ Percorrer ou iterar sobre um array de duas dimensões precisa ter dois laços
-  _ para iterar as duas camadas/dimensões do array
+_ Percorrer ou iterar sobre um array de duas dimensões precisa ter dois laços
+_ para iterar as duas camadas/dimensões do array
 */
 
 for (let i = 0; i < avgTempWeek.length; i++) {
   for (let j = 0; j < avgTempWeek[i].length; j++) {
     console.log(`posição ${i},${j} :`, avgTempWeek[i][j]);
+  }
+}
+
+console.log("------------- * Aula 09 de arrays----------------");
+
+/*
+_ Arrays multidimensionais são com várias dimensões, podendo ser por exemplo um tridimensional.
+*/
+
+const month = [];
+const firstWeeks = [];
+const lastWeeks = [];
+
+const avgTempWeek3 = [34, 33, 36, 16, 24, 19, 26];
+const avgTempWeek4 = [19, 27, 14, 31, 29, 15, 21];
+
+firstWeeks.splice(0, 0, avgTempWeek1, avgTempWeek2);
+lastWeeks.splice(0, 0, avgTempWeek3, avgTempWeek4);
+month.splice(0, 0, firstWeeks, lastWeeks);
+
+console.log(month[1][1][4]);
+
+for (let i = 0; i < month.length; i++) {
+  for (let j = 0; j < month[i].length; j++) {
+    for (let k = 0; k < month[i][j].length; k++) {
+      console.log(`posição ${i},${j},${k}  :`, month[i][j][k]);
+    }
   }
 }
