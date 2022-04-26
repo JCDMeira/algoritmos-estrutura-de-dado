@@ -97,3 +97,34 @@ console.log(fibonacci);
 for (let i = 0; i < fibonacci.length; i++) {
   console.log(`Fibonacci na posição ${i} :`, fibonacci[i]);
 }
+
+console.log("------------- * Aula 04 de arrays----------------");
+
+/*
+  _ Possibilita adicionar pelo length, pois sempre vai ser 1 número maior que a
+  _ última possição, graças a contagem começar em zero. Porém, esse modo não
+  _ é o melhor meio para dicionar elementos.
+  _ O push adiciona um elemento na última possição do array
+  _ o unshift adiciona um novo elemento na primeira posição do array, empurrando
+  _ todos os elementos em uma posição na contagem do indíce
+*/
+
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+numbers[numbers.length] = 10;
+numbers[numbers.length] = 11;
+
+numbers.push(12);
+numbers.push(13);
+numbers.push(14);
+numbers.push(15);
+numbers.push(16);
+
+numbers.unshift(-1);
+numbers.unshift(-2);
+numbers.unshift(-3);
+numbers.unshift(-4);
+
+numbers[0] = -40; // # pegando posição que já existe ele sobrepõe
+
+console.log(numbers);
