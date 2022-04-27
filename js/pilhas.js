@@ -1,4 +1,4 @@
-console.log("------------- * Aula 01 de pilhas----------------");
+console.log("------------- * Pilhas----------------");
 
 /*
   _ Pilhas são uma coleção ordenada de itens que segue o princípio LIFO
@@ -37,8 +37,28 @@ function stack() {
     return items.length;
   };
 
-  this.isEmpty = function () {
+  this.print = function () {
     //@ imprime a pilha no console
     console.log(items.toString());
   };
 }
+
+const pilha = new stack();
+
+pilha.push(2);
+pilha.push(4);
+pilha.push(6);
+pilha.push(8);
+pilha.push(10);
+
+console.log(pilha.peek());
+console.log(pilha.size());
+
+pilha.pop();
+console.log(pilha.size());
+console.log(pilha.isEmpty());
+pilha.print();
+
+pilha.clear();
+console.log(pilha.isEmpty());
+console.log(pilha.size());
