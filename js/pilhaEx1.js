@@ -1,3 +1,5 @@
+//* Conversor de decimal para binário
+
 function dec28In(decNumber) {
   let restStack = [];
   let rest;
