@@ -11,6 +11,20 @@ function LikedList() {
 
   this.append = (element) => {
     //@ adiciona um elemento no final da lista
+    let node = new Node(element);
+
+    if (head === null) {
+      head = node;
+    } else {
+      current = head;
+      while (current.next) {
+        current = current.next;
+      }
+
+      current.next = node;
+    }
+
+    length++;
   };
 
   this.insert = (position, element) => {
@@ -39,9 +53,19 @@ function LikedList() {
 
   this.toString = (element) => {
     //@ converte em string
+    let current = head;
+    let string = "";
+
+    while (current) {
+      string += current.element + " ";
+      current = current.next;
+    }
+
+    return string;
   };
 
   this.print = (element) => {
     //@ imprime no console
+    console.log(this.toString());
   };
 }
