@@ -11,7 +11,8 @@ function LikedList() {
 
   this.append = (element) => {
     //@ adiciona um elemento no final da lista
-    let node = new Node(element);
+    let node = new Node(element),
+      current;
 
     if (head === null) {
       head = node;
@@ -69,3 +70,11 @@ function LikedList() {
     console.log(this.toString());
   };
 }
+
+let linkedList = new LikedList();
+
+linkedList.append("João");
+linkedList.append("José");
+linkedList.append("Maria");
+
+linkedList.print();
