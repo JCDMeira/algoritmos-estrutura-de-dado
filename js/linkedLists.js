@@ -34,6 +34,27 @@ function LikedList() {
 
   this.removeAt = (position) => {
     //@ remove um elemento de uma posição especifica
+    if (position > -1 && position < length) {
+      let current = head,
+        previous,
+        index = 0;
+
+      if (position === 0) {
+        head = current.next;
+      } else {
+        while (index++ < position) {
+          previous = current;
+          current = current.next;
+        }
+        previous.next = current.next;
+      }
+
+      length--;
+
+      return current.element;
+    } else {
+      return null;
+    }
   };
 
   this.remove = (element) => {
@@ -77,4 +98,6 @@ linkedList.append("João");
 linkedList.append("José");
 linkedList.append("Maria");
 
+linkedList.print();
+linkedList.removeAt(1);
 linkedList.print();
