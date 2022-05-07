@@ -122,5 +122,9 @@ linkedList.append("José");
 linkedList.append("Maria");
 
 linkedList.print();
-linkedList.removeAt(1);
+// linkedList.removeAt(1);
+// linkedList.print();
+linkedList.insert(0, "Carlos");
+linkedList.print();
+linkedList.insert(2, "Ana");
 linkedList.print();
