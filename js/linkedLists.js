@@ -82,6 +82,8 @@ function LikedList() {
 
   this.remove = (element) => {
     //@ remove o elemento element (recebido por parâmetro)
+    let index = this.indexOf(element);
+    return this.removeAt(index);
   };
 
   this.indexOf = (element) => {
@@ -142,3 +144,9 @@ linkedList.print();
 console.log(linkedList.indexOf("José"));
 console.log(linkedList.indexOf("Carlos"));
 console.log(linkedList.indexOf("Lucas"));
+
+const removedElement = linkedList.remove("João");
+console.log(removedElement);
+
+const removedElement2 = linkedList.remove("Lucas");
+console.log(removedElement2);
