@@ -103,6 +103,7 @@ function LikedList() {
 
   this.isEmpty = (element) => {
     //@ retorna se a lista está vazia ou não
+    return length === 0;
   };
 
   this.size = (element) => {
@@ -135,6 +136,8 @@ function LikedList() {
 
 let linkedList = new LikedList();
 
+console.log(linkedList.isEmpty());
+
 linkedList.append("João");
 linkedList.append("José");
 linkedList.append("Maria");
@@ -158,3 +161,4 @@ console.log(removedElement2);
 
 console.log(linkedList.getHead());
 console.log(linkedList.size());
+console.log(linkedList.isEmpty());
