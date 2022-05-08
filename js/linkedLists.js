@@ -107,6 +107,7 @@ function LikedList() {
 
   this.size = (element) => {
     //@ retorna o tamanho da instância
+    return length;
   };
 
   this.getHead = () => {
@@ -156,3 +157,4 @@ const removedElement2 = linkedList.remove("Lucas");
 console.log(removedElement2);
 
 console.log(linkedList.getHead());
+console.log(linkedList.size());
