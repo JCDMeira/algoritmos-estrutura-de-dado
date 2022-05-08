@@ -86,6 +86,17 @@ function LikedList() {
 
   this.indexOf = (element) => {
     //@ retorna a posição do elemento element
+    let current = head,
+      index = 0;
+
+    while (current) {
+      if (element === current.element) {
+        return index;
+      }
+      index++;
+      current = current.next;
+    }
+    return -1;
   };
 
   this.isEmpty = (element) => {
@@ -128,3 +139,6 @@ linkedList.insert(0, "Carlos");
 linkedList.print();
 linkedList.insert(2, "Ana");
 linkedList.print();
+console.log(linkedList.indexOf("José"));
+console.log(linkedList.indexOf("Carlos"));
+console.log(linkedList.indexOf("Lucas"));
