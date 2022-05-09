@@ -110,6 +110,10 @@ function DoublyLikedList() {
     return head;
   };
 
+  this.getTail = () => {
+    return tail;
+  };
+
   this.toString = (element) => {
     //@ converte em string
     let current = head;
