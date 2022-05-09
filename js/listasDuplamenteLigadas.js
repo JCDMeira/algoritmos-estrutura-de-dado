@@ -73,6 +73,36 @@ function DoublyLikedList() {
 
   this.removeAt = (position) => {
     //@ remove um elemento de uma posição especifica
+    if (position > -1 && position < length) {
+      let current = head,
+        previous,
+        index = 0;
+
+      if (position === 0) {
+        head = current.next;
+
+        if (length === 1) {
+          tail = null;
+        } else {
+          head.prev = null;
+        }
+      } else if (position === length - 1) {
+        current = tail;
+        tail = current.prev;
+        tail.next = null;
+      } else {
+        while (index++ < position) {
+          previous = current;
+          current = current.next;
+        }
+        previous.next = current.next;
+        current.next.prev = previous;
+      }
+      length--;
+      return current.element;
+    } else {
+      return null;
+    }
   };
 
   this.remove = (element) => {
@@ -141,4 +171,11 @@ dll.append("Maira");
 dll.insert(0, "Carlos");
 dll.insert(4, "Lucas");
 dll.insert(2, "Ana");
+dll.print();
+
+dll.removeAt(0);
+dll.print();
+dll.removeAt(4);
+dll.print();
+dll.removeAt(2);
 dll.print();
