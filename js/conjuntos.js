@@ -85,6 +85,7 @@ set.add(2);
 set.add(3);
 set.add(4);
 set.add(6);
+set.add(8);
 
 console.log(set.size());
 console.log(set.values());
@@ -93,9 +94,16 @@ const set2 = new Set();
 set2.add(1);
 set2.add(10);
 set2.add(5);
+set2.add(4);
+set2.add(6);
+set2.add(7);
+set2.add(8);
 set2.add(20);
 set2.add(30);
 set2.add(40);
 
 const setUnion = set.union(set2);
 console.log(setUnion.values());
+
+const intersectionSet = set.intersection(set2);
+console.log(intersectionSet.values());
