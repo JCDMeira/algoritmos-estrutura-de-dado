@@ -63,6 +63,19 @@ function Set() {
 
     return unionSet;
   };
+
+  this.intersection = (otherSet) => {
+    let intersectionSet = new Set(),
+      values = this.values();
+
+    for (let i = 0; i < values.length; i++) {
+      if (otherSet.has(values[i])) {
+        intersectionSet.add(values[i]);
+      }
+    }
+
+    return intersectionSet;
+  };
 }
 
 const set = new Set();
