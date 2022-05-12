@@ -76,6 +76,19 @@ function Set() {
 
     return intersectionSet;
   };
+
+  this.difference = (otherSet) => {
+    let differenceSet = new Set(),
+      values = this.values();
+
+    for (let i = 0; i < values.length; i++) {
+      if (!otherSet.has(values[i])) {
+        differenceSet.add(values[i]);
+      }
+    }
+
+    return differenceSet;
+  };
 }
 
 const set = new Set();
