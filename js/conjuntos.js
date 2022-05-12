@@ -100,8 +100,8 @@ set.add(4);
 set.add(6);
 set.add(8);
 
-console.log(set.size());
-console.log(set.values());
+console.log("set size", set.size());
+console.log("set", set.values());
 
 const set2 = new Set();
 set2.add(1);
@@ -116,7 +116,13 @@ set2.add(30);
 set2.add(40);
 
 const setUnion = set.union(set2);
-console.log(setUnion.values());
+console.log("setUnion | set U set2 |", setUnion.values());
 
 const intersectionSet = set.intersection(set2);
-console.log(intersectionSet.values());
+console.log("intersectionSet | set n set2 |", intersectionSet.values());
+
+const differenceSet = set.difference(set2);
+console.log("differenceSet | set - set2 |", differenceSet.values());
+
+const differenceSet2 = set2.difference(set);
+console.log("differenceSet2 | set2 - set |", differenceSet2.values());
