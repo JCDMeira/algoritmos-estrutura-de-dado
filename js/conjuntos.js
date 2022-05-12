@@ -39,10 +39,38 @@ function Set() {
   this.values = (value) => {
     //@ retorna um array com todos os valores do conjunto
     const values = [];
-    keys = Object.keys(items);
+    const keys = Object.keys(items);
 
     for (let i = 0; i < keys.length; i++) {
       values.push(items[keys[i]]);
     }
+    return values;
+  };
+
+  this.union = (otherSet) => {
+    let unionSet = new Set(),
+      values = this.values();
+
+    for (let i = 0; i < values.length; i++) {
+      unionSet.add(values[i]);
+    }
+
+    values = otherSet.values();
+
+    for (let i = 0; i < values.length; i++) {
+      unionSet.add(values[i]);
+    }
+
+    return unionSet;
   };
 }
+
+let set = new Set();
+
+set.add(1);
+set.add(2);
+set.add(3);
+set.add(4);
+
+console.log(set.size());
+console.log(set.values());
