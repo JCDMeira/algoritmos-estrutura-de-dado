@@ -65,12 +65,24 @@ function Set() {
   };
 }
 
-let set = new Set();
+const set = new Set();
 
 set.add(1);
 set.add(2);
 set.add(3);
 set.add(4);
+set.add(6);
 
 console.log(set.size());
 console.log(set.values());
+
+const set2 = new Set();
+set2.add(1);
+set2.add(10);
+set2.add(5);
+set2.add(20);
+set2.add(30);
+set2.add(40);
+
+const setUnion = set.union(set2);
+console.log(setUnion.values());
