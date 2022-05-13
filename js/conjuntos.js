@@ -96,8 +96,8 @@ function Set() {
     } else {
       let values = this.values();
 
-      for(let i=0/i<values.length; i++){
-        if(!otherSet.has(values[i])){
+      for (let i = 0; i < values.length; i++) {
+        if (!otherSet.has(values[i])) {
           return false;
         }
       }
@@ -141,3 +141,12 @@ console.log("differenceSet | set - set2 |", differenceSet.values());
 
 const differenceSet2 = set2.difference(set);
 console.log("differenceSet2 | set2 - set |", differenceSet2.values());
+
+const set3 = new Set();
+
+set3.add(1);
+set3.add(2);
+set3.add(3);
+
+console.log("set3 is a subset of set:", set3.subset(set));
+console.log("set2 is a subset of set:", set2.subset(set));
