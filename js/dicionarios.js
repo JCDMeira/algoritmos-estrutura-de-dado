@@ -1,5 +1,5 @@
 function Dictionary() {
-  const items = {};
+  let items = {};
 
   this.set = (key, value) => {
     //@ adiciona um novo item ao dicionário
@@ -9,10 +9,11 @@ function Dictionary() {
   this.delete = (key) => {
     //@ remove o valor do dicionário usando a chave
     if (this.has(key)) {
+      const deleted = items[key];
       delete items[key];
-      return true;
+      return `${key}: ${deleted}`;
     }
-    return false;
+    return undefined;
   };
 
   this.has = (key) => {
@@ -50,4 +51,29 @@ function Dictionary() {
     }
     return values;
   };
+
+  this.getItems = () => {
+    return items;
+  };
 }
+
+const dic = new Dictionary();
+
+dic.set("Gandalf", "gandalf@email.com");
+dic.set("John", "john@email.com");
+dic.set("Tyrion", "tyrion@email.com");
+
+console.log(dic.has("John"));
+console.log(dic.has("Jasm"));
+console.log(dic.size());
+console.log(dic.get("Gandalf"));
+console.log(dic.get("Glad"));
+console.log(dic.keys());
+
+console.log(dic.values());
+
+console.log(dic.getItems());
+console.log(dic.delete("John"));
+console.log(dic.getItems());
+dic.clear();
+console.log(dic.getItems());
