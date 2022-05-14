@@ -29,6 +29,8 @@ function HashTable() {
     // console.log(hash);
     return hash % 37;
   };
+
+  this.size = () => table.length;
 }
 
 const hash = new HashTable();
@@ -39,6 +41,8 @@ hash.put("Tyrion", "tyrion@email.com");
 
 console.log(hash.get("Gandalf"));
 console.log(hash.get("José"));
+console.log(hash.size());
 
 hash.remove("Gandalf");
 console.log(hash.get("Gandalf"));
+console.log(hash.size());
