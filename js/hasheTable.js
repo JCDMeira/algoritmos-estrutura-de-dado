@@ -4,7 +4,7 @@ function HashTable() {
   this.put = (key, value) => {
     //@ insere elemento
     let position = losoloseHashCode(key);
-    console.log(position + " " + key);
+    // console.log(position + " " + key);
     table[position] = value;
   };
 
@@ -31,6 +31,12 @@ function HashTable() {
   };
 
   this.size = () => table.length;
+
+  this.print = () => {
+    for (let i = 0; i < table.length; i++) {
+      if (table[i] !== undefined) console.log(i + " : " + table[i]);
+    }
+  };
 }
 
 const hash = new HashTable();
@@ -46,3 +52,11 @@ console.log(hash.size());
 hash.remove("Gandalf");
 console.log(hash.get("Gandalf"));
 console.log(hash.size());
+
+console.log("------- Tratamento de colisão -------");
+
+hash.put("Gandalf", "gandalf@email.com");
+hash.put("Paul", "Paul@email.com");
+hash.put("Mindy", "Mindy@email.com");
+
+hash.print();
