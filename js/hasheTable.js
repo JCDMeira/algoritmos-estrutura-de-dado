@@ -191,10 +191,35 @@ function HashTable() {
     return false;
   };
 
+  // this.remove = (key) => {
+  //   //@ remove elemento
+  //   table[losoloseHashCode(key)] = undefined;
+  // };
+
   this.get = (key) => {
     //@ retorna um elemento
-    return table[losoloseHashCode(key)];
+    let position = losoloseHashCode(key);
+
+    if (table[position] !== undefined) {
+      let current = table[position].getHead();
+
+      while (current.next) {
+        if (current.element.key === key) {
+          return current.element.value;
+        }
+        current = current.next;
+      }
+      if (current.element.key === key) {
+        return current.element.value;
+      }
+    }
+    return undefined;
   };
+
+  // this.get = (key) => {
+  //   //@ retorna um elemento
+  //   return table[losoloseHashCode(key)];
+  // };
 
   const losoloseHashCode = (key) => {
     //@ retorna hash (valor numérico)
