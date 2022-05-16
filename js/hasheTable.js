@@ -165,7 +165,30 @@ function HashTable() {
 
   this.remove = (key) => {
     //@ remove elemento
-    table[losoloseHashCode(key)] = undefined;
+    let position = losoloseHashCode(key);
+
+    if (table[position] !== undefined) {
+      let current = table[position].getHead();
+
+      while (current.element.key === key) {
+        table[position].remove(current.element);
+
+        if (table[position].isEmpty()) {
+          table[position] = undefined;
+        }
+        return true;
+      }
+      current = current.next;
+    }
+    if (current.element.key === key) {
+      table[position].remove(current.element);
+
+      if (table[position].isEmpty()) {
+        table[position] = undefined;
+      }
+      return true;
+    }
+    return false;
   };
 
   this.get = (key) => {
