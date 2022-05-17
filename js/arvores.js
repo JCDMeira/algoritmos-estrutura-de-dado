@@ -148,5 +148,14 @@ function BinarySearchTree() {
 
   this.postOrderTraverse = (callback) => {
     //@ visita todos os nós da árvore usando um percurso pós ordem
+    postOrderTraverseNode(root, callback);
+  };
+
+  const postOrderTraverseNode = (node, callback) => {
+    if (node !== null) {
+      postOrderTraverseNode(node.left, callback);
+      postOrderTraverseNode(node.right, callback);
+      callback(node.key);
+    }
   };
 }
