@@ -52,6 +52,35 @@ function BinarySearchTree() {
 
   this.remove = (key) => {
     //@ remove uma chave
+    root = removeNode(root, key);
+  };
+
+  const removeNode = (node, key) => {
+    if (node === null) {
+      return null;
+    } else if (key < node.key) {
+      node.left = removeNode(node.left, key);
+      return node;
+    } else if (key > node.key) {
+      node.right = removeNode(node.right, key);
+      return node;
+    } else {
+      if (node.left === null && node.right === null) {
+        node = null;
+        return node;
+      } else if (node.left === null) {
+        node = node.right;
+        return node;
+      } else if (node.right === null) {
+        node = node.left;
+        return node;
+      }
+      let aux = findMinNode(node.right);
+
+      node.key = aux.key;
+      node.right = removeNode(node.right, aux.key);
+      return node;
+    }
   };
 
   this.min = () => {
