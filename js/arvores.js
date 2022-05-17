@@ -35,6 +35,19 @@ function BinarySearchTree() {
 
   this.search = (key) => {
     //@ busca uma chave
+    return searchNode(root, key);
+  };
+
+  const searchNode = (node, key) => {
+    if (node === null) {
+      return false;
+    } else if (key < node.key) {
+      return searchNode(node.left, key);
+    } else if (key > node.key) {
+      return searchNode(node.right, key);
+    } else {
+      return true;
+    }
   };
 
   this.remove = (key) => {
