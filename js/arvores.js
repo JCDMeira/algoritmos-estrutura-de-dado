@@ -93,8 +93,9 @@ function BinarySearchTree() {
       while (node && node.left !== null) {
         node = node.left;
       }
-      return null;
+      return node.key;
     }
+    return null;
   };
 
   const findMinNode = (node) => {
@@ -106,6 +107,17 @@ function BinarySearchTree() {
 
   this.max = () => {
     //@ retorna a maior chave
+    return maxNode(root);
+  };
+
+  const maxNode = (node) => {
+    if (node) {
+      while (node && node.right !== null) {
+        node = node.right;
+      }
+      return node.key;
+    }
+    return null;
   };
 
   this.inOrderTraverse = () => {
