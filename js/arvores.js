@@ -120,8 +120,17 @@ function BinarySearchTree() {
     return null;
   };
 
-  this.inOrderTraverse = () => {
+  this.inOrderTraverse = (callback) => {
     //@ visita todos os nós da árvore usando um percurso em ordem
+    inOrderTraverseNode(root, callback);
+  };
+
+  const inOrderTraverseNode = (node, callback) => {
+    if (node !== null) {
+      inOrderTraverseNode(node.left, callback);
+      callback(node.key);
+      inOrderTraverseNode(node.right, callback);
+    }
   };
 
   this.preOrderTraverse = () => {
