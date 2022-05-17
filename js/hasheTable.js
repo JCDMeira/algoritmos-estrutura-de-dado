@@ -135,7 +135,7 @@ function LinkedList() {
 function HashTable() {
   let table = [];
 
-  const ValuePair = (key, value) => {
+  const ValuePair = function (key, value) {
     this.key = key;
     this.value = value;
     this.toString = () => `[ ${this.key} - ${this.value}]`;
@@ -148,7 +148,7 @@ function HashTable() {
 
   this.put = (key, value) => {
     //@ insere elemento
-    let position = losoloseHashCode(key);
+    let position = loseloseHashCode(key);
 
     if (table[position] === undefined) {
       table[position] = new LinkedList();
@@ -158,47 +158,47 @@ function HashTable() {
 
   // this.put = (key, value) => {
   //   //@ insere elemento
-  //   let position = losoloseHashCode(key);
+  //   let position = loseloseHashCode(key);
   //   // console.log(position + " " + key);
   //   table[position] = value;
   // };
 
   this.remove = (key) => {
     //@ remove elemento
-    let position = losoloseHashCode(key);
+    let position = loseloseHashCode(key);
 
     if (table[position] !== undefined) {
-      let current = table[position].getHead();
+      var current = table[position].getHead();
 
-      while (current.element.key === key) {
+      while (current.next) {
+        if (current.element.key === key) {
+          table[position].remove(current.element);
+          if (table[position].isEmpty()) {
+            table[position] = undefined;
+          }
+          return true;
+        }
+        current = current.next;
+      }
+      if (current.element.key === key) {
         table[position].remove(current.element);
-
         if (table[position].isEmpty()) {
           table[position] = undefined;
         }
         return true;
       }
-      current = current.next;
-    }
-    if (current.element.key === key) {
-      table[position].remove(current.element);
-
-      if (table[position].isEmpty()) {
-        table[position] = undefined;
-      }
-      return true;
     }
     return false;
   };
 
   // this.remove = (key) => {
   //   //@ remove elemento
-  //   table[losoloseHashCode(key)] = undefined;
+  //   table[loseloseHashCode(key)] = undefined;
   // };
 
   this.get = (key) => {
     //@ retorna um elemento
-    let position = losoloseHashCode(key);
+    let position = loseloseHashCode(key);
 
     if (table[position] !== undefined) {
       let current = table[position].getHead();
@@ -218,10 +218,10 @@ function HashTable() {
 
   // this.get = (key) => {
   //   //@ retorna um elemento
-  //   return table[losoloseHashCode(key)];
+  //   return table[loseloseHashCode(key)];
   // };
 
-  const losoloseHashCode = (key) => {
+  const loseloseHashCode = (key) => {
     //@ retorna hash (valor numérico)
     let hash = 0;
 
@@ -259,7 +259,19 @@ console.log(hash.size());
 console.log("------- Tratamento de colisão -------");
 
 hash.put("Gandalf", "gandalf@email.com");
-hash.put("Paul", "Paul@email.com");
+hash.put("Aaron", "Aaron@email.com");
+hash.put("Donnie", "Donnie@email.com");
+hash.put("Ana", "Ana@email.com");
+hash.put("Jonathan", "Jonathan@email.com");
+hash.put("Jamie", "Jamie@email.com");
 hash.put("Mindy", "Mindy@email.com");
+hash.put("Paul", "Paul@email.com");
+hash.put("Nathan", "Nathan@email.com");
 
 hash.print();
+
+console.log(hash.get("Marcos"));
+console.log(hash.get("Paul"));
+console.log("remove", hash.remove("Marcos"));
+console.log("remove", hash.remove("Jonathan"));
+console.log("remove", hash.remove("Paul"));
