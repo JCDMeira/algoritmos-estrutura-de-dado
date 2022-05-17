@@ -133,11 +133,20 @@ function BinarySearchTree() {
     }
   };
 
-  this.preOrderTraverse = () => {
+  this.preOrderTraverse = (callback) => {
     //@ visita todos os nós da árvore usando um precurso pré ordem
+    preOrderTraverseNode(root, callback);
   };
 
-  this.postOrderTraverse = () => {
+  const preOrderTraverseNode = (node, callback) => {
+    if (node !== null) {
+      callback(node.key);
+      preOrderTraverseNode(node.left, callback);
+      preOrderTraverseNode(node.right, callback);
+    }
+  };
+
+  this.postOrderTraverse = (callback) => {
     //@ visita todos os nós da árvore usando um percurso pós ordem
   };
 }
