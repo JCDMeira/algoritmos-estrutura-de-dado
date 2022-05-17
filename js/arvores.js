@@ -9,6 +9,28 @@ function BinarySearchTree() {
 
   this.insert = (key) => {
     //@ insere uma chave
+    const newNode = new Node(key);
+    if (root === nul) {
+      root = newNode;
+    } else {
+      insertNode(root, newNode);
+    }
+  };
+
+  const insertNode = (root, newNode) => {
+    if (NewNode.key < node.key) {
+      if (node.left === null) {
+        node.left = newNode;
+      } else {
+        insertNode(node.left, newNode);
+      }
+    } else {
+      if (node.right === null) {
+        node.right = newNode;
+      } else {
+        insertNode(node.right, newNode);
+      }
+    }
   };
 
   this.search = (key) => {
