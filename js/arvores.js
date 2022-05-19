@@ -10,15 +10,15 @@ function BinarySearchTree() {
   this.insert = (key) => {
     //@ insere uma chave
     const newNode = new Node(key);
-    if (root === nul) {
+    if (root === null) {
       root = newNode;
     } else {
       insertNode(root, newNode);
     }
   };
 
-  const insertNode = (root, newNode) => {
-    if (NewNode.key < node.key) {
+  const insertNode = (node, newNode) => {
+    if (newNode.key < node.key) {
       if (node.left === null) {
         node.left = newNode;
       } else {
@@ -159,3 +159,21 @@ function BinarySearchTree() {
     }
   };
 }
+
+const tree = new BinarySearchTree();
+
+tree.insert(11);
+tree.insert(7);
+tree.insert(15);
+tree.insert(5);
+tree.insert(3);
+tree.insert(9);
+tree.insert(8);
+tree.insert(10);
+tree.insert(13);
+tree.insert(12);
+tree.insert(14);
+tree.insert(20);
+tree.insert(18);
+tree.insert(25);
+tree.insert(6);
