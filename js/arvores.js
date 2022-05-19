@@ -190,3 +190,6 @@ console.log(tree.max());
 console.log("---------------------------");
 
 tree.inOrderTraverse(printNode);
+
+console.log("---------------------------");
+tree.preOrderTraverse(printNode);
