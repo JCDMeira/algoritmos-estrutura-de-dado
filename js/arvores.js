@@ -180,3 +180,6 @@ tree.insert(6);
 
 console.log(tree.search(6));
 console.log(tree.search(16));
+
+console.log(tree.min());
+
