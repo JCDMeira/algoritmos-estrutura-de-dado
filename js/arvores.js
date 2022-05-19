@@ -177,3 +177,6 @@ tree.insert(20);
 tree.insert(18);
 tree.insert(25);
 tree.insert(6);
+
+console.log(tree.search(6));
+console.log(tree.search(16));
