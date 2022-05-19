@@ -159,6 +159,9 @@ function BinarySearchTree() {
     }
   };
 }
+function printNode(value) {
+  console.log(value);
+}
 
 const tree = new BinarySearchTree();
 
@@ -182,5 +185,8 @@ console.log(tree.search(6));
 console.log(tree.search(16));
 
 console.log(tree.min());
-
 console.log(tree.max());
+
+console.log("---------------------------");
+
+tree.inOrderTraverse(printNode);
