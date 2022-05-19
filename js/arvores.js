@@ -183,3 +183,4 @@ console.log(tree.search(16));
 
 console.log(tree.min());
 
+console.log(tree.max());
