@@ -58,9 +58,12 @@ function Dictionary() {
 }
 
 function Graph() {
+  let vertices = [];
+  let adjList = new Dictionary();
+
   this.addvertex = (v) => {
-    let vertices = [];
-    let adjList = new Dictionary();
+    vertices.push(v);
+    adjList.set(v, []);
   };
 
   this.addEdge = (v, w) => {
