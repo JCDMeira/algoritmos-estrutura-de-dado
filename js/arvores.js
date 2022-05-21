@@ -204,3 +204,7 @@ tree.inOrderTraverse(printNode);
 console.log("---------------------------");
 tree.remove(5);
 tree.inOrderTraverse(printNode);
+
+console.log("---------------------------");
+tree.remove(15);
+tree.inOrderTraverse(printNode);
