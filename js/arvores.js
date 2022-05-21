@@ -196,3 +196,7 @@ tree.preOrderTraverse(printNode);
 
 console.log("---------------------------");
 tree.postOrderTraverse(printNode);
+
+console.log("---------------------------");
+tree.remove(6);
+tree.inOrderTraverse(printNode);
