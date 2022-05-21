@@ -61,7 +61,7 @@ function Graph() {
   let vertices = [];
   let adjList = new Dictionary();
 
-  this.addvertex = (v) => {
+  this.addVertex = (v) => {
     vertices.push(v);
     adjList.set(v, []);
   };
@@ -75,12 +75,12 @@ function Graph() {
     let s = "";
 
     for (let i = 0; i < vertices.length; i++) {
-      s += vertices[i] + " ->";
+      s += vertices[i] + " -> ";
 
       let neighbors = adjList.get(vertices[i]);
 
       for (let j = 0; j < neighbors.length; j++) {
-        const s = neighbors[j];
+        s += neighbors[j] + " ";
       }
 
       s += "\n";
@@ -88,3 +88,22 @@ function Graph() {
     return s;
   };
 }
+
+const graph = new Graph();
+
+const myVertices = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+
+myVertices.forEach((vertice) => graph.addVertex(vertice));
+
+graph.addEdge("A", "B");
+graph.addEdge("A", "C");
+graph.addEdge("A", "D");
+graph.addEdge("C", "D");
+graph.addEdge("C", "G");
+graph.addEdge("D", "G");
+graph.addEdge("D", "H");
+graph.addEdge("B", "E");
+graph.addEdge("B", "F");
+graph.addEdge("E", "I");
+
+console.log(graph.toString());
