@@ -29,9 +29,24 @@ function ArrayList() {
           indexMin = j;
         }
       }
-      if(i !== indexMin{
-        swap(array, i, indexMin)
+      if (i !== indexMin) {
+        swap(array, i, indexMin);
       }
+    }
+  };
+
+  this.insertionSort = () => {
+    let j, temp;
+
+    for (let i = 0; i < array.length; i++) {
+      j = i;
+      temp = array[i];
+
+      while (j > 0 && array[j - 1] > temp) {
+        array[j] = array[j - 1];
+        j--;
+      }
+      array[j] = temp;
     }
   };
 
@@ -53,7 +68,9 @@ al.insert(1);
 console.log(al.toString());
 
 // al.bubbleSort();
-// console.log(al.toString());
 
-// al.bubbleSort();
-// console.log(al.toString());
+// al.selectionSort();
+
+al.insertionSort();
+
+console.log(al.toString());
