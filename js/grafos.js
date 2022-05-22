@@ -215,4 +215,12 @@ graph.addEdge("E", "I");
 
 console.log(graph.toString());
 
-graph.bfs(myVertices[0], printNode);
+// graph.bfs(myVertices[0], printNode);
+graph.dfs(printNode);
+
+// # testando array com o elemento de chave e aderindo propriedades ao elemento
+// const test = ["a1"];
+
+// test["a1"] = "boss";
+// console.log(test["a1"]);
+// console.log(test);
