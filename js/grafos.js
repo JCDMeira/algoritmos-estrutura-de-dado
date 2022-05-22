@@ -1,3 +1,43 @@
+function Queue() {
+  let items = [];
+
+  this.enqueue = (element) => {
+    //@ adiciona um novo item
+    console.log("adicionou:", element);
+
+    items.push(element);
+  };
+
+  this.dequeue = () => {
+    //@ remove um item
+    console.log("removeu:", items[0]);
+    return items.shift();
+  };
+
+  this.front = () => {
+    //@ retorna o primeiro elemento da fila
+    console.log("O primeiro elemento é:", items[0]);
+    return items[0];
+  };
+
+  this.isEmpty = () => {
+    //@ verifica se a fila está vazia ou não
+    console.log(items.length === 0 ? "está vazio" : "não está vazio");
+    return items.length === 0;
+  };
+
+  this.size = () => {
+    //@ retorna o tamanho da fila
+    console.log("O tamanho da fila é:", items.length);
+    return items.length;
+  };
+
+  this.print = () => {
+    //@ imprimir a fila no console
+    console.log(items.toString());
+  };
+}
+
 function Dictionary() {
   let items = {};
 
@@ -87,7 +127,45 @@ function Graph() {
     }
     return s;
   };
+
+  const initializeColor = () => {
+    const color = [];
+
+    for (let i = 0; i < vertices.length; i++) {
+      color[vertices[i]] = "white";
+    }
+    return color;
+  };
+
+  this.bfs = (v, callback) => {
+    const color = initializeColor(),
+      queue = new Queue();
+
+    queue.enqueue(v);
+
+    while (!queue.isEmpty()) {
+      let u = queue.dequeue(),
+        neighbors = adjList.get(u);
+
+      color[u] = "grey";
+
+      for (let i = 0; i < neighbors.length; i++) {
+        let w = neighbors[i];
+
+        if (color[w] === "white") {
+          color[w] = "grey";
+          queue.enqueue(w);
+        }
+      }
+      color[u] = "black";
+      callback(u);
+    }
+  };
 }
+
+const printNode = (value) => {
+  console.log("Visited vertex: ", value);
+};
 
 const graph = new Graph();
 
