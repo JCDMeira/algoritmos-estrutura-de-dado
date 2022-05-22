@@ -19,6 +19,22 @@ function ArrayList() {
     }
   };
 
+  this.selectionSort = () => {
+    let indexMin;
+
+    for (let i = 0; i < array.length - 1; i++) {
+      indexMin = i;
+      for (let j = i; j < array.length; j++) {
+        if (array[indexMin] > array[j]) {
+          indexMin = j;
+        }
+      }
+      if(i !== indexMin{
+        swap(array, i, indexMin)
+      }
+    }
+  };
+
   const swap = (array, index1, index2) => {
     let aux = array[index1];
 
@@ -36,5 +52,8 @@ al.insert(2);
 al.insert(1);
 console.log(al.toString());
 
-al.bubbleSort();
-console.log(al.toString());
+// al.bubbleSort();
+// console.log(al.toString());
+
+// al.bubbleSort();
+// console.log(al.toString());
