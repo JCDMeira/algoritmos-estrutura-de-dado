@@ -132,6 +132,7 @@ function Graph() {
     const color = [];
 
     for (let i = 0; i < vertices.length; i++) {
+      console.log("está branco" + vertices[i]);
       color[vertices[i]] = "white";
     }
     return color;
@@ -148,6 +149,7 @@ function Graph() {
         neighbors = adjList.get(u);
 
       color[u] = "grey";
+      console.log("A cor de: " + u + " virou cinza");
 
       for (let i = 0; i < neighbors.length; i++) {
         let w = neighbors[i];
@@ -158,6 +160,7 @@ function Graph() {
         }
       }
       color[u] = "black";
+      console.log("A cor de: " + u + " virou preto");
       callback(u);
     }
   };
@@ -185,3 +188,5 @@ graph.addEdge("B", "F");
 graph.addEdge("E", "I");
 
 console.log(graph.toString());
+
+graph.bfs(myVertices[0], printNode);
