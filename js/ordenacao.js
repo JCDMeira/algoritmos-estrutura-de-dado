@@ -102,6 +102,9 @@ function ArrayList() {
 
 const al = new ArrayList();
 
+al.insert(8);
+al.insert(7);
+al.insert(6);
 al.insert(5);
 al.insert(4);
 al.insert(3);
