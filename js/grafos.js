@@ -164,6 +164,32 @@ function Graph() {
       callback(u);
     }
   };
+
+  this.dfs = (callback) => {
+    const color = initializeColor();
+
+    for (let i = 0; i < vertices.length; i++) {
+      if (color[vertices[i]] === "white") {
+        dfsVisit(vertices[i], color, callback);
+      }
+    }
+  };
+
+  const dfsVisit = (u, color, callback) => {
+    color[u] = "grey";
+    callback(u);
+
+    let neighbors = adjList.get(u);
+
+    for (let i = 0; i < neighbors.length; i++) {
+      let w = neighbors[i];
+
+      if (color[w] === "white") {
+        dfsVisit(w, color, callback);
+      }
+    }
+    color[u] = "black";
+  };
 }
 
 const printNode = (value) => {
